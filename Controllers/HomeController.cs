@@ -23,6 +23,14 @@ public class HomeController : Controller
         return View();
     }
 
+
+    public IActionResult TraerListadoAlumnos(string nombre, string apellido)
+    {
+        ViewBag.ListaNomApellAlumnos=BD.ObtenerNombreYApellidoAlumnos(nombre, apellido);         
+        return View();
+    }
+
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
