@@ -3,13 +3,5 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-
-    @{
-                foreach (Alumnos nomApell in @ViewBag.ListaNomApellAlumnos){
-                    <p>@ViewBag.Alumno.Nombre</p>
-                    <p>@ViewBag.Alumno.Apellido</p>
-                }
-    }
-
+    <a href='@Url.Action("ListadoAlumnos","Home")'>Traer listado de alumnos</a>
 </div>

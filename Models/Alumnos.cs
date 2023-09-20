@@ -4,7 +4,6 @@ public class Alumnos{
     public string Apellido {get; set;}
     public string Legajo {get; set;}
     public string Curso {get; set;}
-    public static List<Alumnos> _alumnos {get; set;}
 
 
     public Alumnos(){

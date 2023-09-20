@@ -24,10 +24,21 @@ public class HomeController : Controller
     }
 
 
-    public IActionResult TraerListadoAlumnos(string nombre, string apellido)
+    public IActionResult ListadoAlumnos()
     {
-        ViewBag.ListaNomApellAlumnos=BD.ObtenerNombreYApellidoAlumnos(nombre, apellido);         
-        return View();
+       List<Alumnos> _ListaDeAlumnos=BD.GetListadoAlumnos();
+       ViewBag.ListaDeAlumnos=_ListaDeAlumnos;    
+       return View();
+    }
+
+    public IActionResult DetalleAlumnos(string legajo)
+    {
+       List<Alumnos> _DetalleAlumno=BD.GetDetalleAlumno(legajo);
+       ViewBag.DetalleAlumno=_DetalleAlumno;    
+       
+       List<Notas> _NotasAlumno =BD.GetNotasAlumno(legajo);
+       ViewBag.NotasAlumno=_NotasAlumno;    
+       return View();
     }
 
 
